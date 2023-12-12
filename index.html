@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esbugalhado</title>
+    <link rel="stylesheet" href="jogo.css">
+    <script type="module" src="outro-jogo.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="capa">
+        <div class="esquerdo">
+            <img src="scorpion.gif">
+            <h1 class="nome" id="placarJogador">PLAYER : 0 </h1>
+        </div>
+
+        <div class="meio">
+            <div class="area-npc">
+                <div class="tabuleiro-npc" id="npc">
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                </div>
+
+                <div class="pontuacao-npc" id="pontuacaoNPC">
+                    <div class="cada-dado-pontuacao"></div>
+                    <div class="cada-dado-pontuacao"></div>
+                    <div class="cada-dado-pontuacao"></div>
+                </div>
+
+            </div>
+            
+            <div class="area-resultado">
+                <h1 class="resultado" id="ganhador">X</h1>
+            </div>
+
+
+            <div class="area-jogador">
+                <div class="setas-jogador">
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta-cima.svg">
+                    </button>
+
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta-cima.svg">
+                    </button>
+                    
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta-cima.svg">
+                    </button>
+                </div>
+
+                <div class="pontuacao-jogador" id="pontuacaoJogador">
+                    <div class="cada-dado-pontuacao"></div>
+                    <div class="cada-dado-pontuacao"></div>
+                    <div class="cada-dado-pontuacao"></div>
+                </div>
+
+                <div class="tabuleiro-jogador" id="jogador">
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                    <div class="cada-dado"></div>
+                </div>
+            </div>
+
+            <div class="area-dado">
+                <div class="dado" id="dado"></div>
+            </div>
+
+        
+        </div>
+
+        <div class="direito">
+            <img src="subzero.gif">
+            <h1 class="nome2" id="placarNPC">BOT : 0</h1>
+        </div>
+    </div>
+</body>
+</html>

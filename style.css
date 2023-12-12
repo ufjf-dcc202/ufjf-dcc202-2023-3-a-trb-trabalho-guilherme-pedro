@@ -1,0 +1,243 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-image: url('https://i.pinimg.com/originals/6a/1a/b8/6a1ab8b8cda39fe267375c3a0c356ed6.jpg');
+    background-size: cover;     /* Cobrir toda a área do elemento */
+    background-position: center;    /* Centralizar a imagem no elemento */
+    background-repeat: no-repeat;   /* Evitar repetição da imagem */
+    font-family: 'Cinzel', serif;
+}
+
+.capa {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.esquerdo>img {
+    width: 40%;
+    height: 30%;
+    margin-right: 0vw;
+}
+
+.nome {
+    color: black;
+    font-size: 1.5vw;
+    margin: 0px;
+}
+
+.dado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 85%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.meio {
+    display: grid;
+    grid-template-rows: 40%  8% 40% 10%;
+}
+
+.area-npc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabuleiro-npc {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 55%;    
+    width: 25%;
+    gap: 5px;
+}
+
+.tabuleiro-npc>div {
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.pontuacao-npc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 12%;    
+    width: 25%;
+    gap: 5px;
+}
+
+.pontuacao-npc>div {
+    background-color: rgb(255, 90, 90);
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.botao:hover {
+    background-color: rgb(119, 255, 119);
+    cursor: pointer;
+}
+
+.img-seta-baixo {
+    height: 60%;
+    width: auto;
+    transform: rotate(180deg);
+}
+
+.area-dado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dado img{
+    width: 70%;
+    height: auto;
+}
+
+#jogador img{
+    width: 70%;
+    height: auto;
+}
+
+#npc img{
+    width: 70%;
+    height: auto;
+}
+
+.cada-dado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pontuacaoNPC {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#pontuacaoJogador {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.cada-dado-pontuacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.area-jogador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.setas-jogador {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 10%;
+    width: 25%;
+    gap: 5px;
+}
+
+.setas-jogador>div {
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.tabuleiro-jogador {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 55%;    
+    width: 25%;
+    gap: 5px;
+}
+
+.tabuleiro-jogador>div {
+    border-radius: 10px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pedro img {
+    width: auto;
+    height: 90%;
+}
+
+.pontuacao-jogador{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 12%;    
+    width: 25%;
+    gap: 5px;
+}
+
+.pontuacao-jogador>div {
+    background-color: rgb(119, 255, 119);
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.area-resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado {
+    margin: 0px;
+    font-size: 90px;
+    font-weight: bolder;
+}
+
+#ganhador div{
+    background-color: aqua;
+}
+
+.direito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.direito>img {
+    width: 40%;
+    height: 30%;
+    transform: scaleX(-1);
+}
+
+.nome2 {
+    color: black;
+    font-size: 1.5vw;
+    margin: 0px;
+}
