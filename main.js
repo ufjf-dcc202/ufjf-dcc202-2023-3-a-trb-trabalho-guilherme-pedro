@@ -71,14 +71,16 @@ function preencherGridComImagens(vetor, gridSelector) {
             index++;
         }
     }
-}   // PREENCHE A GRID COM IMAGENS de 1 a 6, as 'peças' do tabuleiro ficam estilizadas
+}   // coloca imagens na grid de 1 a 6.
 
+// chama as funções.
 
 function atualizaTelaComImagens() {
     preencherGridComImagens(gridJogador, '#jogador');
     preencherGridComImagens(gridNPC, '#npc');
-}   // CHAMA AS FUNÇÕES DE PREENCHER GRID
+}   
 
+// ATUALIZA A PONTUACAO DE GRID PONTUACAO aparecendo acima da coluna, na celula 'pontuacao'
 
 function attPontuacao(tipoGrid, tipoIdGrid) {
     const celulas = document.querySelectorAll(`${tipoIdGrid} .cada-dado-pontuacao`);
@@ -89,8 +91,10 @@ function attPontuacao(tipoGrid, tipoIdGrid) {
         }
         celulas[i].textContent = soma;
     }
-};    // ATUALIZA A PONTUACAO DE GRID PONTUACAO aparecendo acima da coluna, na celula 'pontuacao'
+};   
 
+
+// Conta os valores repetidos nas colunas.
 
 function contadorColuna(coluna, valor, qualGrid){
     let vezes = 0;
@@ -100,8 +104,8 @@ function contadorColuna(coluna, valor, qualGrid){
         }
     }
     return vezes;
-    // A contagem é feita individualmente para cada valor passado no argumento ,somando assim a pontuacao final na funcao  "att pontuacao"
-}   // CONTA OS DADOS REPETIDOS NA COLUNAS
+  
+}   
 
 
 function atualizaTela() {
