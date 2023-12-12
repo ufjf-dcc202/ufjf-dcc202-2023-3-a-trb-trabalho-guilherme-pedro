@@ -1,5 +1,4 @@
 // Adiciona a tabela do jogador 1, que é seu player 
-
 let gridJogador = [            
     [[], [], []],
     [[], [], []],
@@ -7,16 +6,17 @@ let gridJogador = [
 ];
 
 // adiciona tabela do bot 
-
 let gridNPC = [           
     [[], [], []],
     [[], [], []],
     [[], [], []]
 ];
 
-let pontuacaoJogador = [0, 0, 0];  // "jogador" no inicio do jogo
+// "jogador" no inicio do jogo
+let pontuacaoJogador = [0, 0, 0];          
 
-let pontuacaoNPC = [0, 0, 0];      // "bot" no inicio do jogo
+// "bot" no inicio do jogo
+let pontuacaoNPC = [0, 0, 0];             /
 
 atualizaTela();    
 
@@ -74,14 +74,12 @@ function preencherGridComImagens(vetor, gridSelector) {
 }   // coloca imagens na grid de 1 a 6.
 
 // chama as funções.
-
 function atualizaTelaComImagens() {
     preencherGridComImagens(gridJogador, '#jogador');
     preencherGridComImagens(gridNPC, '#npc');
 }   
 
 // ATUALIZA A PONTUACAO DE GRID PONTUACAO aparecendo acima da coluna, na celula 'pontuacao'
-
 function attPontuacao(tipoGrid, tipoIdGrid) {
     const celulas = document.querySelectorAll(`${tipoIdGrid} .cada-dado-pontuacao`);
     for (let i = 0; i < 3; i++){
@@ -95,7 +93,6 @@ function attPontuacao(tipoGrid, tipoIdGrid) {
 
 
 // Conta os valores repetidos nas colunas.
-
 function contadorColuna(coluna, valor, qualGrid){
     let vezes = 0;
     for(let i = 0; i < 3; i++){
@@ -107,7 +104,7 @@ function contadorColuna(coluna, valor, qualGrid){
   
 }   
 
-
+// atualiza a tela atualizando o estado do jogo apos as jogadas dos players
 function atualizaTela() {
     preencherGrid(gridJogador, '#jogador');
     preencherGrid(gridNPC, '#npc');
@@ -116,7 +113,7 @@ function atualizaTela() {
     atualizaTelaComImagens();
     attPontuacao(gridJogador, '#pontuacaoJogador');
     attPontuacao(gridNPC, '#pontuacaoNPC');
-}   // ATUALIZA A TELA DO JOGO chamando  algumas funcoes atualizando o estado do jogo apos as jogadas dos players
+}  
 
 
 function adcDadoJogador(botao) {
