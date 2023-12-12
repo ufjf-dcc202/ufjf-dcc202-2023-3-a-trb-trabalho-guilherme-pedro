@@ -1,30 +1,34 @@
-let gridJogador = [    // Adiciona a tabela do jogador 1, que é seu player           
+// Adiciona a tabela do jogador 1, que é seu player 
+
+let gridJogador = [            
     [[], [], []],
     [[], [], []],
     [[], [], []]
 ];
 
-let gridNPC = [        // Adiciona tabela do NPC que vai ser o bot     
+// adiciona tabela do NPC que vai ser o bot 
+
+let gridNPC = [           
     [[], [], []],
     [[], [], []],
     [[], [], []]
 ];
 
-let pontuacaoJogador = [0, 0, 0];  // Estado inicial do jogador
+let pontuacaoJogador = [0, 0, 0];  // estado inicial do jogador
 
-let pontuacaoNPC = [0, 0, 0];      // Estado inicial do bot
+let pontuacaoNPC = [0, 0, 0];      // estado inicial do bot
 
-atualizaTela();    // Atualiza inicialmete o jogo
+atualizaTela();    // atualiza inicialmete o jogo
 
 const dado = document.querySelector('#dado');
 
-let dadoAtual = randomNumber();     // Gera o primeiro numero aleatorio
+let dadoAtual = randomNumber();     // gera o primeiro numero aleatorio
 
 dado.textContent = dadoAtual;
 
 colocarImagem();
 
-adcDadoJogador(0);      // Adiciona dados dos jogadores nas colunas 
+adcDadoJogador(0);      // adiciona dados dos jogadores nas colunas 
 adcDadoJogador(1);
 adcDadoJogador(2);
 
@@ -38,7 +42,7 @@ function preencherGrid(vetor, gridSelector) {
             index++;
         }
     }
-}   // PREENCHE A GRID COM OS VALORES relacionados aos valores dos dados na forma de Matriz com [i][j];
+}   // Preenche a grid com os valor Matriz com [i][j];
 
 
 function preencherGridPontuacao(vetor, gridSelector) {
