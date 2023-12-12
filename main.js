@@ -6,7 +6,7 @@ let gridJogador = [
     [[], [], []]
 ];
 
-// adiciona tabela do NPC que vai ser o bot 
+// adiciona tabela do bot 
 
 let gridNPC = [           
     [[], [], []],
@@ -14,21 +14,23 @@ let gridNPC = [
     [[], [], []]
 ];
 
-let pontuacaoJogador = [0, 0, 0];  // estado inicial do jogador
+let pontuacaoJogador = [0, 0, 0];  // "jogador" no inicio do jogo
 
-let pontuacaoNPC = [0, 0, 0];      // estado inicial do bot
+let pontuacaoNPC = [0, 0, 0];      // "bot" no inicio do jogo
 
-atualizaTela();    // atualiza inicialmete o jogo
+atualizaTela();    
 
 const dado = document.querySelector('#dado');
 
-let dadoAtual = randomNumber();     // gera o primeiro numero aleatorio
+let dadoAtual = randomNumber();     // gera numero aleatorio
 
 dado.textContent = dadoAtual;
 
 colocarImagem();
 
-adcDadoJogador(0);      // adiciona dados dos jogadores nas colunas 
+ // adiciona dados nas colunas 
+
+adcDadoJogador(0);      
 adcDadoJogador(1);
 adcDadoJogador(2);
 
@@ -42,7 +44,7 @@ function preencherGrid(vetor, gridSelector) {
             index++;
         }
     }
-}   // Preenche a grid com os valor Matriz com [i][j];
+}   // preenche a grid com os valor Matriz com [i][j];
 
 
 function preencherGridPontuacao(vetor, gridSelector) {
@@ -52,7 +54,7 @@ function preencherGridPontuacao(vetor, gridSelector) {
         celula[index].textContent = vetor[i];
         index++;
     }
-}   // PREENCHE A GRID DA PONTUAÇÃO baseado no gridPontuacao(vetor), os vetores sao preenchidos com valores gerados pelos dados
+}   // Preenche a pontuação baseado no gridPontuacao(vetor).
 
 
 function preencherGridComImagens(vetor, gridSelector) {
@@ -75,7 +77,7 @@ function preencherGridComImagens(vetor, gridSelector) {
 function atualizaTelaComImagens() {
     preencherGridComImagens(gridJogador, '#jogador');
     preencherGridComImagens(gridNPC, '#npc');
-}   // CHAMA AS FUNÇÕES DE PREENCHER GRID: estilizando o tabuleiro com dados  e colocando os elementos nas celulas, e atualiza tela para a proxima jogada.
+}   // CHAMA AS FUNÇÕES DE PREENCHER GRID
 
 
 function attPontuacao(tipoGrid, tipoIdGrid) {
@@ -179,7 +181,7 @@ function adcDadoNpc() {
     gridNPC[linha][coluna] = novoNumero;
 
     descartarDados(novoNumero, coluna, gridJogador);
-}   // ADICIONA O DADO DO NPC DE FORMA ALEATÓRIA
+}   // ADICIONA O DADO DO DE FORMA ALEATÓRIA
 
 
 
@@ -194,6 +196,8 @@ function verificaFimDoJogo() {
     return false;
 }   // VAI VERIFICAR O FIM DO JOGO
 
+// posições disponiveis para o bot jogar.
+
 function posicoesDisponiveisJogo(grid){
     let posicoesDisponiveis = [];
     for (let i = 0; i < 3; i++) {
@@ -204,8 +208,9 @@ function posicoesDisponiveisJogo(grid){
         }
     }
     return posicoesDisponiveis;
-}   // VE AS POSICOES DISPONIVEIS PARA O NPC JOGAR
+}   
 
+// posições possiveis na coluna
 
 function posicoesDisponiveisJogador(coluna) {
     let posicoesDisponiveis = [];
@@ -214,8 +219,8 @@ function posicoesDisponiveisJogador(coluna) {
             posicoesDisponiveis.push(i);
         }
     }
-    return posicoesDisponiveis;
-}   // VE AS POSICOES DISPONIVEIS NA COLUNA QUE O JOGADOR CLICAR O BOTAO
+    return posicoesDisponiveis;   
+}   // posições possiveis na coluna
 
 function defineGanhador(){
     const pontuacaoJogador = somaPontucao('#pontuacaoJogador');
@@ -227,12 +232,14 @@ function defineGanhador(){
     placarJogador.textContent = `JOGADOR: ${pontuacaoJogador}`;
     placarNPC.textContent = `NPC: ${pontuacaoNPC}`;
     
+    // condição para descobrir quem vai ser o vencedor do jogo
+
     if(pontuacaoJogador > pontuacaoNPC){
         ganhador.textContent = 'Ganhador: Jogador';
     } else {
         ganhador.textContent = 'Ganhador: NPC';
     }
-}   // DEFINE O GANHADOR DO JOGO
+}   
 
 function placar() {
     const pontuacaoJogador = somaPontucao('#pontuacaoJogador');
@@ -256,7 +263,7 @@ function colocarImagem(){
     const imgLocal = document.createElement('img');
     imgLocal.src = `dado${dadoAtual}.svg`;
     dado.appendChild(imgLocal);
-}   // COLOCA IMAGEM NO LUGAR DO NÚMERO DO DADO
+}   
 
 function somaPontucao(tipo){
     const celula = document.querySelectorAll(`${tipo} .cada-dado-pontuacao`);
@@ -265,8 +272,11 @@ function somaPontucao(tipo){
         soma += parseInt(celula[i].textContent);
     }
     return soma;
-}   // SOMA A PONTUACAO DA GRID DE PONTUACAO
+}   // soma a pontuação.
+
+
+// numero aleatorio.
 
 function randomNumber() {
     return Math.floor(Math.random() * 6) + 1;
-}   // GERA UM NÚMERO ALEATÓRIO
+}   
