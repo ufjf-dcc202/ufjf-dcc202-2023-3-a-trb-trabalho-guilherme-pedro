@@ -16,7 +16,7 @@ let gridNPC = [
 let pontuacaoJogador = [0, 0, 0];          
 
 // "bot" no inicio do jogo
-let pontuacaoNPC = [0, 0, 0];             /
+let pontuacaoNPC = [0, 0, 0];             
 
 atualizaTela();    
 
@@ -34,7 +34,7 @@ adcDadoJogador(0);
 adcDadoJogador(1);
 adcDadoJogador(2);
 
-
+// preenche a grid com os valor Matriz com [i][j];
 function preencherGrid(vetor, gridSelector) {
     let index = 0;
     const celula = document.querySelectorAll(`${gridSelector} .cada-dado`)
@@ -44,7 +44,7 @@ function preencherGrid(vetor, gridSelector) {
             index++;
         }
     }
-}   // preenche a grid com os valor Matriz com [i][j];
+} 
 
 
 function preencherGridPontuacao(vetor, gridSelector) {
