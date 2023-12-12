@@ -198,7 +198,6 @@ function verificaFimDoJogo() {
 }   // VAI VERIFICAR O FIM DO JOGO
 
 // posições disponiveis para o bot jogar.
-
 function posicoesDisponiveisJogo(grid){
     let posicoesDisponiveis = [];
     for (let i = 0; i < 3; i++) {
@@ -212,7 +211,6 @@ function posicoesDisponiveisJogo(grid){
 }   
 
 // posições possiveis na coluna
-
 function posicoesDisponiveisJogador(coluna) {
     let posicoesDisponiveis = [];
     for(let i = 0; i < 3; i++){
@@ -221,7 +219,7 @@ function posicoesDisponiveisJogador(coluna) {
         }
     }
     return posicoesDisponiveis;   
-}   // posições possiveis na coluna
+}  
 
 function defineGanhador(){
     const pontuacaoJogador = somaPontucao('#pontuacaoJogador');
@@ -234,7 +232,6 @@ function defineGanhador(){
     placarNPC.textContent = `NPC: ${pontuacaoNPC}`;
     
     // condição para descobrir quem vai ser o vencedor do jogo
-
     if(pontuacaoJogador > pontuacaoNPC){
         ganhador.textContent = 'Ganhador: Jogador';
     } else {
@@ -242,6 +239,8 @@ function defineGanhador(){
     }
 }   
 
+
+// atualiza o placar
 function placar() {
     const pontuacaoJogador = somaPontucao('#pontuacaoJogador');
     const pontuacaoNPC = somaPontucao('#pontuacaoNPC');
@@ -249,7 +248,7 @@ function placar() {
     const placarNPC = document.querySelector('#placarNPC');
     placarJogador.textContent = `JOGADOR: ${pontuacaoJogador}`;
     placarNPC.textContent = `NPC: ${pontuacaoNPC}`;
-}   // ATUALIZA O PLACAR EM TEMPO REAL
+}   
 
 function descartarDados(valor, coluna, tipoGrid) {
     for (let i = 0; i < 3; i++) {
