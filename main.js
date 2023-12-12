@@ -1,4 +1,4 @@
-// Adiciona a tabela do jogador 1, que é seu player 
+// adiciona a tabela do jogador 1, que é seu player 
 let gridJogador = [            
     [[], [], []],
     [[], [], []],
