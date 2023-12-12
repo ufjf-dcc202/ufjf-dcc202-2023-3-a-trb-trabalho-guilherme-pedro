@@ -164,7 +164,7 @@ function adcDadoJogador(botao) {
     });
 }   // O JOGO VAI RODAR DENTRO DESSA FUNCAO, QUE PREENCHE A GRID COM O VALOR DO DADO GERADO
 
-
+// add dado aleatoriamente
 function adcDadoNpc() {
     const posicoesDisponiveis = posicoesDisponiveisJogo(gridNPC);
 
@@ -182,10 +182,10 @@ function adcDadoNpc() {
     gridNPC[linha][coluna] = novoNumero;
 
     descartarDados(novoNumero, coluna, gridJogador);
-}   // ADICIONA O DADO DO DE FORMA ALEATÓRIA
+}   
 
 
-
+// verifica o fim do jogo
 function verificaFimDoJogo() {
     const posicoesDisponiveisJ = posicoesDisponiveisJogo(gridJogador);
     const posicoesDisponiveisNPC = posicoesDisponiveisJogo(gridNPC);
@@ -195,7 +195,7 @@ function verificaFimDoJogo() {
         return true;
     }
     return false;
-}   // VAI VERIFICAR O FIM DO JOGO
+}   
 
 // posições disponiveis para o bot jogar.
 function posicoesDisponiveisJogo(grid){
