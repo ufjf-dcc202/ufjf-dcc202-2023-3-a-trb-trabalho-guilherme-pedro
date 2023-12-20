@@ -7,6 +7,11 @@ let dado = document.getElementById('dado');
 // dadoSorteado recebe um valor aleatório de 1 a 6 gerado pela funcao sorteiaNumero
 let dadoSorteado = sorteiaNumero();
 
+// Gera um número aleatório entre 1 e 6
+function sorteiaNumero() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
 // Exibe o número atual no dado
 dado.textContent = dadoSorteado;
 
@@ -246,11 +251,6 @@ function vencedor(){
         let msg = "TENTE NOVAMENTE! O BOT VENCEU! :(";
         alert(msg);
     }
-}
-
-// Gera um número aleatório entre 1 e 6
-function sorteiaNumero() {
-    return Math.floor(Math.random() * 6) + 1;
 }
 
 // Encontra e retorna as linhas disponíveis para uma jogada do player em uma coluna específica da matriz
