@@ -2,14 +2,13 @@ import { matPlayer, matBot, pontuacaoPlayer, pontuacaoBot } from './auxiliar.js'
 
 // PRIMEIRO PASSO
 // Cria um link da variável dado em js com o id "dado" em html
-let dado = document.querySelector('#dado');
+let dado = document.getElementById('dado');
 
 // dadoSorteado recebe um valor aleatório de 1 a 6 gerado pela funcao sorteiaNumero
 let dadoSorteado = sorteiaNumero();
 
 // Exibe o número atual no dado
 dado.textContent = dadoSorteado;
-
 
 // SEGUNDO PASSO
 // Atualiza a tela do jogo com base nos dados presentes nas matrizes matPlayer e matBot
@@ -31,7 +30,6 @@ function attTela(){
     pontuacao(matPlayer, '#pontuacaoPlayer');
     pontuacao(matBot, '#pontuacaoBot');
 }
-
 
 // Funcao que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com os valores correspondentes da matriz
 function carregaMat(matriz, escolheID) {
@@ -164,10 +162,9 @@ function jogadaPlayer(botoes) {
         let linha = casasLivres[0]; // Adiciona sempre a primeira posicao disponível
         matPlayer[linha][coluna] = valor;
 
-        // Verifica se há dados com o mesmo valor na mesma coluna do bot e o placar para atualizar os pontos
+        // Verifica se há dados com o mesmo valor na mesma coluna do bot
         eliminaDado(valor, coluna, matBot);
         attTela(); // Reflete as mudancas feitas
-        placar(); // Atualiza o placar
 
         // Gera um novo valor para o dado e atualiza o seu valor, e depois sua imagem
         dadoSorteado = sorteiaNumero();
@@ -179,7 +176,6 @@ function jogadaPlayer(botoes) {
 
         // Atualizar as alterações após a jogada do bot
         attTela();
-        placar();
 
         // Permite novamente o click do player
         permiteClick = true;
@@ -237,15 +233,9 @@ function vencedor(){
     let pontuacaoPlayer = somaPontos('#pontuacaoPlayer');
     let pontuacaoBot = somaPontos('#pontuacaoBot');
 
-    // Linka os elementos HTML que exibem o placar e o vencedor
-    let vencedor = document.querySelector('#fim-de-jogo');
-    let placarPlayer = document.querySelector('#placarPlayer');
-    let placarBot = document.querySelector('#placarBot');
+    // Linka os elementos HTML que exibem o vencedor
+    let vencedor = document.getElementById('fim-de-jogo');
 
-    // Atualiza os elementos HTML com as pontuações calculadas
-    placarPlayer.textContent = `PLAYER : ${pontuacaoPlayer}`;
-    placarBot.textContent = `BOT : ${pontuacaoBot}`;
-    
     // Compara as pontuações e determina quem venceu
     if(pontuacaoPlayer > pontuacaoBot){
         vencedor.textContent = 'FIM DE JOGO';
@@ -291,22 +281,6 @@ function eliminaDado(valor, coluna, matriz) {
     }
 } // Valor -> valor de um dado específico -------//------- coluna -> coluna em que o valor está -------//------- matriz -> matPlayer ou matBot
 
-
-// Atualiza e exibe o placar do jogo na tela do usuário
-function placar() {
-
-    // Calcula a pontuação do player e do bot
-    const pontuacaoPlayer = somaPontos('#pontuacaoPlayer');
-    const pontuacaoBot = somaPontos('#pontuacaoBot');
-
-    // Linka os elementos HTML que exibem o placar e o vencedor
-    const placarPlayer = document.querySelector('#placarPlayer');
-    const placarBot = document.querySelector('#placarBot');
-
-    // Atualiza os elementos HTML com as pontuações calculadas
-    placarPlayer.textContent = `PLAYER : ${pontuacaoPlayer}`;
-    placarBot.textContent = `BOT : ${pontuacaoBot}`;
-}
 
 // Soma os valores contidos nas casas de uma coluna específica
 function somaPontos(escolheID){
