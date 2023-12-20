@@ -11,82 +11,77 @@
 </head>
 <body>
     <div class="capa">
-        <div class="esquerdo">
+        <div class="cima">
             <img src="scorpion.gif">
-            <h1 class="nome" id="placarJogador">PLAYER : 0 </h1>
+            <h1 class="nome" id="placarPlayer">PLAYER : 0 </h1>
         </div>
 
         <div class="meio">
-            <div class="area-npc">
-                <div class="tabuleiro-npc" id="npc">
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
+            <div class="area-bot">
+                <div class="pontuacao-bot" id="pontuacaoBot">
+                    <div class="espaco-pontuacao"></div>
+                    <div class="espaco-pontuacao"></div>
+                    <div class="espaco-pontuacao"></div>
                 </div>
 
-                <div class="pontuacao-npc" id="pontuacaoNPC">
-                    <div class="cada-dado-pontuacao"></div>
-                    <div class="cada-dado-pontuacao"></div>
-                    <div class="cada-dado-pontuacao"></div>
+                <div class="tabuleiro-bot" id="bot">
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
                 </div>
 
             </div>
             
             <div class="area-resultado">
-                <h1 class="resultado" id="ganhador">X</h1>
-            </div>
-
-
-            <div class="area-jogador">
-                <div class="setas-jogador">
-                    <button class="botao">
-                        <img class="img-seta-baixo" src="seta-cima.svg">
-                    </button>
-
-                    <button class="botao">
-                        <img class="img-seta-baixo" src="seta-cima.svg">
-                    </button>
-                    
-                    <button class="botao">
-                        <img class="img-seta-baixo" src="seta-cima.svg">
-                    </button>
-                </div>
-
-                <div class="pontuacao-jogador" id="pontuacaoJogador">
-                    <div class="cada-dado-pontuacao"></div>
-                    <div class="cada-dado-pontuacao"></div>
-                    <div class="cada-dado-pontuacao"></div>
-                </div>
-
-                <div class="tabuleiro-jogador" id="jogador">
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                    <div class="cada-dado"></div>
-                </div>
-            </div>
-
-            <div class="area-dado">
+                <h1 class="resultado" id="fim-de-jogo">VS</h1>
                 <div class="dado" id="dado"></div>
             </div>
 
-        
+            <div class="area-player">
+                <div class="setas-player">
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta.gif">
+                    </button>
+
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta.gif">
+                    </button>
+                    
+                    <button class="botao">
+                        <img class="img-seta-baixo" src="seta.gif">
+                    </button>
+                </div>
+
+                <div class="pontuacao-player" id="pontuacaoPlayer">
+                    <div class="espaco-pontuacao"></div>
+                    <div class="espaco-pontuacao"></div>
+                    <div class="espaco-pontuacao"></div>
+                </div>
+
+                <div class="tabuleiro-player" id="player">
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                    <div class="espaco-dado"></div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="direito">
+        <div class="baixo">
             <img src="subzero.gif">
-            <h1 class="nome2" id="placarNPC">BOT : 0</h1>
+            <h1 class="nome2" id="placarBot">BOT : 0</h1>
         </div>
     </div>
 </body>
