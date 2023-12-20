@@ -33,10 +33,10 @@ function attTela(){
 
 // Funcao que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com os valores correspondentes da matriz
 function carregaMat(matriz, escolheID) {
-    let indice = 0;
     let casa = document.querySelectorAll(`${escolheID} .espaco-dado`) // Link da variável casa em js com a classe "espaco-dado" da id do jogador da vez
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++){
+            let indice = 0;
             casa[indice].textContent = matriz[i][j]; // Preenche as casas (espaco-dado) com os valores de cada posicao da matriz
             indice++;
         }
@@ -63,15 +63,15 @@ function attImagem() {
 
 // Função que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com a imagem correspondentes do valor da matriz
 function carregaMatImg(matriz, escolheID) {
-    let indice = 0;
     let casa = document.querySelectorAll(`${escolheID} .espaco-dado`) // Link da casa com "espaco-dado" de seu respectivo jogador
+    let indice = 0;
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++){
             casa[indice].innerHTML = ''; // Apaga conteúdo dentro de casa
             if (matriz[i][j] >= 1 && matriz[i][j] <= 6) {
-                let imgLocal = document.createElement('img'); // Cria uma nova img e a declara como 'filho' de casa, preenchendo o espaco com uma img
-                imgLocal.src = `dado${matriz[i][j]}.gif`;
-                casa[indice].appendChild(imgLocal);
+                let criaImg = document.createElement('img'); // Cria uma nova img e a declara como 'filho' de casa, preenchendo o espaco com uma img
+                criaImg.src = `dado${matriz[i][j]}.gif`;
+                casa[indice].appendChild(criaImg);
             } 
             indice++;
         }
@@ -113,7 +113,7 @@ addImagem();
 function addImagem(){
 
     // Limpa qualquer conteúdo existente, para que a imagem seja o único elemento
-    dado.innerHTML = '';
+    dado.innerText = '';
 
     // Cria um elemento <img> e obtem o atributo 'src' da imagem
     let criaImg = document.createElement('img');
@@ -130,7 +130,7 @@ jogadaPlayer(1);
 jogadaPlayer(2);
 function jogadaPlayer(botoes) {
 
-    const botao = document.querySelectorAll('.botao'); // Linka botao com todas as classes 'botao' no HTML
+    let botao = document.querySelectorAll('.botao'); // Linka botao com todas as classes 'botao' no HTML
     let permiteClick = true;
 
     botao[botoes].addEventListener('click', () => { // Associa um evento de clique ao botão específico identificado pelo parâmetro botoes
@@ -198,7 +198,7 @@ function termino() {
     let casasLivresB = casasLivresGeral(matBot);
 
     // Verifica se não há mais casas livres para o player ou para o bot
-    if (casasLivresP.length === 0 || casasLivresB. length === 0) {
+    if (casasLivresP.length == 0 || casasLivresB. length == 0) {
         vencedor(); // Define o vencedor
         return true; // Retorna true indicando que o jogo chegou ao fim
     }
@@ -215,7 +215,7 @@ function casasLivresGeral(matriz){
         for (let j = 0; j < 3; j++) {
 
             // Verifica se a celula atual na matriz está vazia
-            if(matriz[i][j].length === 0){
+            if(matriz[i][j].length == 0){
                 // Adiciona a posição [linha, coluna] ao vetor de casas disponíveis
                 casasLivres.push([i, j]);
             }
