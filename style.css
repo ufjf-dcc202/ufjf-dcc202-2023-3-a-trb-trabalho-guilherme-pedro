@@ -173,7 +173,6 @@ body {
     height: 50%;    
     width: 35%;
     gap: 5px;
-    margin-bottom: 40px;
 }
 
 .tabuleiro-player>div {
@@ -189,6 +188,7 @@ body {
     height: 12%;    
     width: 35%;
     gap: 5px;
+    margin-bottom: 50px;
 }
 
 .pontuacao-player>div {

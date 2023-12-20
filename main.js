@@ -16,6 +16,22 @@ function sorteiaNumero() {
 dado.textContent = dadoSorteado;
 
 // SEGUNDO PASSO
+// Adiciona uma imagem na tela do usuário correspondente ao dado específico
+addImagem();
+function addImagem(){
+
+    // Limpa qualquer conteúdo existente, para que a imagem seja o único elemento
+    dado.innerText = '';
+
+    // Cria um elemento <img> e obtem o atributo 'src' da imagem
+    let criaImg = document.createElement('img');
+    criaImg.src = `dado${dadoSorteado}.gif`;
+
+    // Declara a imagem como filho de dado
+    dado.appendChild(criaImg);
+}
+
+// TERCEIRO PASSO
 // Atualiza a tela do jogo com base nos dados presentes nas matrizes matPlayer e matBot
 attTela();
 function attTela(){
@@ -111,22 +127,6 @@ function contaColuna(coluna, valor, matriz){
 
 } // coluna -> i  ----//----  valor -> valor do dado  ----//----  matriz --> matPlayer ou matBot
 
-
-// TERCEIRO PASSO
-// Adiciona uma imagem na tela do usuário correspondente ao dado específico
-addImagem();
-function addImagem(){
-
-    // Limpa qualquer conteúdo existente, para que a imagem seja o único elemento
-    dado.innerText = '';
-
-    // Cria um elemento <img> e obtem o atributo 'src' da imagem
-    let criaImg = document.createElement('img');
-    criaImg.src = `dado${dadoSorteado}.gif`;
-
-    // Declara a imagem como filho de dado
-    dado.appendChild(criaImg);
-}
 
 // QUARTO PASSO
 // Adiciona um dado a matriz do player quando um dos 3 botões é clicado
