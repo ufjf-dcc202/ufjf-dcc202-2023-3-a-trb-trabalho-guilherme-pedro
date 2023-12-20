@@ -15,10 +15,6 @@ dado.textContent = dadoSorteado;
 attTela();
 function attTela(){
 
-    // Recalcula e atualiza as pontuações finais do player e do bot
-    pontuacao(matPlayer, '#pontuacaoPlayer');
-    pontuacao(matBot, '#pontuacaoBot');
-
     // Preenche a pontuacao dos jogadores com seus respectivos parametros
     carregaPont(pontuacaoPlayer, '#pontuacaoPlayer');
     carregaPont(pontuacaoBot, '#pontuacaoBot');
@@ -27,10 +23,12 @@ function attTela(){
     carregaMat(matPlayer, '#player');
     carregaMat(matBot, '#bot');
 
+    // Recalcula e atualiza as pontuações finais do player e do bot
+    pontuacao(matPlayer, '#pontuacaoPlayer');
+    pontuacao(matBot, '#pontuacaoBot');
+
     // Exibe a matriz dos jogadores com as imagens dos dados
     attImagem();
-
-    
 }
 
 // Funcao que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com os valores correspondentes da matriz
