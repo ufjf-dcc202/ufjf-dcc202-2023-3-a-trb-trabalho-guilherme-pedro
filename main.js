@@ -52,6 +52,17 @@ function attTela(){
     attImagem();
 }
 
+// Função que preenche cada espaco da pontuação no HTML de algum jogador (player ou bot), com os valores correspondentes de seu vetor
+function carregaPont(vetor, escolheID) {
+    let casa = document.querySelectorAll(`${escolheID} .espaco-pontuacao`) // Link da casa com "espaco-pontuacao" do jogador da vez
+    for (let i = 0; i < vetor.length; i++) {
+        let indice = 0;
+        casa[indice].textContent = vetor[i]; // Preenche as casas (espaco-pontuacao) com os valores de cada posição da vetor
+        indice++;
+    }
+} // vetor -> pontuacaoPlayer ou pontuacaoBot  ----//----  escolheID -> #pontuacaoPlayer ou #pontuacaoBot
+
+
 // Funcao que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com os valores correspondentes da matriz
 function carregaMat(matriz, escolheID) {
     let casa = document.querySelectorAll(`${escolheID} .espaco-dado`) // Link da variável casa em js com a classe "espaco-dado" da id do jogador da vez
@@ -64,23 +75,6 @@ function carregaMat(matriz, escolheID) {
     }
 } // matriz -> matPlayer ou matBot  ----//----  escolheID -> #player ou #bot
 
-
-// Função que preenche cada espaco da pontuação no HTML de algum jogador (player ou bot), com os valores correspondentes de seu vetor
-function carregaPont(vetor, escolheID) {
-    let casa = document.querySelectorAll(`${escolheID} .espaco-pontuacao`) // Link da casa com "espaco-pontuacao" do jogador da vez
-    for (let i = 0; i < vetor.length; i++) {
-        let indice = 0;
-        casa[indice].textContent = vetor[i]; // Preenche as casas (espaco-pontuacao) com os valores de cada posição da vetor
-        indice++;
-    }
-} // vetor -> pontuacaoPlayer ou pontuacaoBot  ----//----  escolheID -> #pontuacaoPlayer ou #pontuacaoBot
-
-
-// Atualiza visualmente as matrizes do player e do bot com imagens dos dados lançados
-function attImagem() {
-    carregaMatImg(matPlayer, '#player'); // Chama a função usando como parametros a matriz de player do js e a id '#player' do HTML
-    carregaMatImg(matBot, '#bot'); // Chama a função usando como parametros a matriz do bot do js e a id '#bot' do HTML
-}
 
 // Função que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com a imagem correspondentes do valor da matriz
 function carregaMatImg(matriz, escolheID) {
@@ -98,6 +92,13 @@ function carregaMatImg(matriz, escolheID) {
         }
     }
 } // matriz -> matPlayer ou matBot  ----//----  escolheID -> #player ou #bot
+
+
+// Atualiza visualmente as matrizes do player e do bot com imagens dos dados lançados
+function attImagem() {
+    carregaMatImg(matPlayer, '#player'); // Chama a função usando como parametros a matriz de player do js e a id '#player' do HTML
+    carregaMatImg(matBot, '#bot'); // Chama a função usando como parametros a matriz do bot do js e a id '#bot' do HTML
+}
 
 
 // Calcula e atualiza visualmente a pontuação associada ao player ou bot em um jogo
