@@ -15,20 +15,22 @@ dado.textContent = dadoSorteado;
 attTela();
 function attTela(){
 
-    // Preenche o tabuleiro dos jogadores com seus respectivos parametros
-    carregaMat(matPlayer, '#player');
-    carregaMat(matBot, '#bot');
+    // Recalcula e atualiza as pontuações finais do player e do bot
+    pontuacao(matPlayer, '#pontuacaoPlayer');
+    pontuacao(matBot, '#pontuacaoBot');
 
     // Preenche a pontuacao dos jogadores com seus respectivos parametros
     carregaPont(pontuacaoPlayer, '#pontuacaoPlayer');
     carregaPont(pontuacaoBot, '#pontuacaoBot');
 
+    // Preenche o tabuleiro dos jogadores com seus respectivos parametros
+    carregaMat(matPlayer, '#player');
+    carregaMat(matBot, '#bot');
+
     // Exibe a matriz dos jogadores com as imagens dos dados
     attImagem();
 
-    // Recalcula e atualiza as pontuações finais do player e do bot
-    pontuacao(matPlayer, '#pontuacaoPlayer');
-    pontuacao(matBot, '#pontuacaoBot');
+    
 }
 
 // Funcao que preenche cada casa do tabuleiro no HTML de algum jogador (player ou bot), com os valores correspondentes da matriz
@@ -46,9 +48,9 @@ function carregaMat(matriz, escolheID) {
 
 // Função que preenche cada espaco da pontuação no HTML de algum jogador (player ou bot), com os valores correspondentes de seu vetor
 function carregaPont(vetor, escolheID) {
-    let indice = 0;
     let casa = document.querySelectorAll(`${escolheID} .espaco-pontuacao`) // Link da casa com "espaco-pontuacao" do jogador da vez
     for (let i = 0; i < vetor.length; i++) {
+        let indice = 0;
         casa[indice].textContent = vetor[i]; // Preenche as casas (espaco-pontuacao) com os valores de cada posição da vetor
         indice++;
     }
